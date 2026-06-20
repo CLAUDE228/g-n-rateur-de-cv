@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+/* Hide scrollbar utility for custom tabs */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Perfect print stylesheet for clean, vector PDF downloads */
+@media print {
+  /* Hide every DOM node except our selected CV container */
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 210mm;
+    height: 297mm;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  #cv-template-professional,
+  #cv-template-professional *,
+  #cv-template-modern,
+  #cv-template-modern * {
+    visibility: visible;
+  }
+
+  #cv-template-professional,
+  #cv-template-modern {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 12mm 15mm !important; /* Elegant margins */
+    margin: 0 !important;
+    page-break-after: avoid;
+    page-break-before: avoid;
+    background-color: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Force background colors and images in Chrome / Safari */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

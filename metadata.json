@@ -1,0 +1,6 @@
+{
+  "name": "Générateur de CV",
+  "description": "Une application moderne pour créer, personnaliser et imprimer votre CV professionnel en quelques minutes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,61 @@
+/* main.css - Custom Global Styles and Utilities */
+
+/* Basic resets and base styles */
+:root {
+  --slate-900: #0f172a;
+  --slate-800: #1e293b;
+  --slate-400: #94a3b8;
+  --slate-200: #e2e8f0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Utility Classes seen in components */
+
+/* Font Weight */
+.fw-black {
+  font-weight: 900;
+}
+
+/* Slate Colors (from TailWind palettes often used) */
+.text-slate-900 { color: var(--slate-900); }
+.text-slate-800 { color: var(--slate-800); }
+.text-slate-400 { color: var(--slate-400); }
+.border-slate-200 { border-color: var(--slate-200); }
+
+/* Tracking */
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+
+/* Transitions */
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Flex utilities */
+.justify-between {
+  justify-content: space-between;
+}
+
+/* Badge primary subtle (mimicking Bootstrap 5.3+ or custom) */
+.token-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+/* Animations found in App.vue */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}

@@ -1,0 +1,47 @@
+services:
+  # 💻 SERVICE BACKEND : Node.js (Recommandé car fonctionnel)
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: node-backend
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    environment:
+      - PORT=9000
+      - NODE_ENV=development
+    networks:
+      - app-network
+
+  # 💻 SERVICE BACKEND ALTERNATIF : Laravel (Si vous complétez les fichiers manquants)
+  # backend-laravel:
+  #   build:
+  #     context: ./backend-laravel
+  #     dockerfile: Dockerfile
+  #   container_name: laravel-backend
+  #   ports:
+  #     - "9001:9000"
+  #   volumes:
+  #     - ./backend-laravel:/var/www
+  #   networks:
+  #     - app-network
+
+  # 🌐 SERVICE FRONTEND : Vue 3 + Bootstrap (Servi par Nginx)
+  frontend:
+    build:
+      context: ./frontend-vue
+      dockerfile: Dockerfile
+    container_name: vue-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
